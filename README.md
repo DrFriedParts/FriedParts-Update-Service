@@ -4,13 +4,14 @@ FriedParts Update Service
 Overview
 --------
 
-The FriedParts Update Service is a tiny Windows Service Application (a system-level process, no GUI) that calls into the the FriedParts Web Service on a periodic basis. This allows the FriedParts Website ("web application" in Web 2.0 speak) to perform maintainence and updates on a period basis from within its own local namespace -- the updating business logic code operates in the same scope as the rest of the web app.
+The FriedParts Update Service is a tiny Windows Service Application (a system-level process, no GUI) that calls into the the FriedParts Web Service on a periodic basis. This allows the FriedParts Website ("web application" in Web 2.0 speak) to perform maintainence and updates on a periodic basis from within its own local namespace -- the updating business logic code operates in the same scope as the rest of the web app and also resides there simplifying management/upkeep of the maintainence code itself.
 
 FriedParts and this Update Service companion were principally developed by *Jonathan Friedman* of the *Networked and Embedded Systems Lab* (NESL) of the *University of California, Los Angeles* (UCLA). 
 
 Author
 ------
 Jonathan Friedman, MSEE PhDc
+
 jf@ee.ucla.edu
 
 Resources

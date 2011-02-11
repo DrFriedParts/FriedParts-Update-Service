@@ -1,5 +1,8 @@
-﻿Public Class FriedPartsUpdateService
-    Const fpUS_Version = "0.89"
+﻿Imports System.Diagnostics
+
+Public Class FriedPartsUpdateService
+
+    Const fpUS_Version = "1.0-2011.02.11"
     Const MyLog As String = "FriedParts"
     Const MySource As String = "fpUpdateService"
     Const TimerIntervalInSeconds = 10
@@ -30,7 +33,7 @@
         'Timer1.AutoReset = True
         'Timer1.Interval = 1000 * TimerIntervalInSeconds 'Value must be in milliseconds
         'Timer1.Start()
-        Msg("FP Update Service Version " & fpUS_Version & " STARTED!")
+        Msg("FriedParts Update Service Version " & fpUS_Version & " STARTED! Timer interval is " & TimerIntervalInSeconds & " seconds.", EventLogEntryType.Warning)
     End Sub
 
 
@@ -38,17 +41,18 @@
         ' Add code here to perform any tear-down necessary to stop your service.
         'Should we call a notify function in the Web App? Hmmm...
         'Timer1.Stop() 'Not really necessary since Timer1 is about to get poofed from memory
-        Msg("FP Update Service STOPPED!")
+        Msg("FP Update Service STOPPED!", EventLogEntryType.Error)
     End Sub
 
     Protected Sub Timer1_Elapsed(ByVal sender As Object, ByVal e As System.Timers.ElapsedEventArgs) Handles Timer1.Elapsed
         'Call the worker thread via the WebService -- we do this so that the web app handles 
         'this within its own local scope -- where is it easy to access all the functions and libs
-        Msg("Tick!")
-        'Call the WEB SERVICE!
+        Dim fpWebService As New edu.ucla.nesl.friedparts.sysWebService()
+        Dim Result As String = fpWebService.Update()
+        Msg(Result)
     End Sub
 
-    Protected Sub Msg(ByRef theMessageToLog As String)
-        EventLog1.WriteEntry(theMessageToLog)
+    Protected Sub Msg(ByRef theMessageToLog As String, Optional ByRef MessageType As System.Diagnostics.EventLogEntryType = EventLogEntryType.Information)
+        EventLog.WriteEntry(MySource, theMessageToLog, MessageType)
     End Sub
 End Class

@@ -6,7 +6,27 @@ FriedPartsUpdateService
 </name>
 </assembly>
 <members>
-<member name="P:FriedPartsUpdateService.My.Resources.Resources.ResourceManager">
+<member name="M:FriedPartsUpdateService.edu.ucla.nesl.friedparts.sysWebService.#ctor">
+	<remarks/>
+</member><member name="E:FriedPartsUpdateService.edu.ucla.nesl.friedparts.sysWebService.UpdateCompleted">
+	<remarks/>
+</member><member name="M:FriedPartsUpdateService.edu.ucla.nesl.friedparts.sysWebService.Update">
+	<remarks/>
+</member><member name="M:FriedPartsUpdateService.edu.ucla.nesl.friedparts.sysWebService.UpdateAsync">
+	<remarks/>
+</member><member name="M:FriedPartsUpdateService.edu.ucla.nesl.friedparts.sysWebService.UpdateAsync(System.Object)">
+	<remarks/>
+</member><member name="M:FriedPartsUpdateService.edu.ucla.nesl.friedparts.sysWebService.CancelAsync(System.Object)">
+	<remarks/>
+</member><member name="T:FriedPartsUpdateService.edu.ucla.nesl.friedparts.sysWebService">
+	<remarks/>
+</member><member name="T:FriedPartsUpdateService.edu.ucla.nesl.friedparts.UpdateCompletedEventHandler">
+	<remarks/>
+</member><member name="P:FriedPartsUpdateService.edu.ucla.nesl.friedparts.UpdateCompletedEventArgs.Result">
+	<remarks/>
+</member><member name="T:FriedPartsUpdateService.edu.ucla.nesl.friedparts.UpdateCompletedEventArgs">
+	<remarks/>
+</member><member name="P:FriedPartsUpdateService.My.Resources.Resources.ResourceManager">
 	<summary>
   Returns the cached ResourceManager instance used by this class.
 </summary>
